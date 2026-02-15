@@ -15,10 +15,8 @@ if not mongo_uri:
 
 client = MongoClient(mongo_uri)
 
-db = client["DataSensor"] 
-collectionData = db["Data"] 
-
-db = client["StateData"]
-collectionAgent = db["Data"]
+db = client["Testing"] 
+collectionData = db["sensor_logs"] 
+collectionAgent = db["Room-Agents"]
 
 

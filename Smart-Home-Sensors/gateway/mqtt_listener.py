@@ -1,15 +1,19 @@
 import paho.mqtt.client as mqtt
-from datetime import datetime, timezone
+from datetime import datetime, timezone , timedelta
 import json
-from db_handler import collectionData,collectionAgent
+from db_handler import collectionData
+
+current_time = datetime.now(timezone.utc)
 
 def on_message(client, userdata, msg):
+    global current_time
     try:
         data = json.loads(msg.payload.decode())
         result = collectionData.insert_one({
             **data,
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": current_time
         })
+        current_time += timedelta(minutes=5)
         print(f"✓ Inserted successfully with ID: {result.inserted_id}")
     except json.JSONDecodeError as e:
         print(f"✗ JSON decode error: {e}")

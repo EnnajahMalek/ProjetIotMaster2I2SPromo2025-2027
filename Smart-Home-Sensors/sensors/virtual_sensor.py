@@ -3,11 +3,11 @@ import random
 class VirtualSensor:
 
     def __init__(self,
-                 initial_value=0.0,
-                 min_value=None,
-                 max_value=None,
-                 inertia=0.05,
-                 noise_level=0.1):
+                initial_value=0.0,
+                min_value=None,
+                max_value=None,
+                inertia=0.05,
+                noise_level=0.1):
 
         self.value = initial_value
         self.min_value = min_value
