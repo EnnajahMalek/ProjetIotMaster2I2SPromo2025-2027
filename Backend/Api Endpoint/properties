@@ -1,8 +1,8 @@
 spring.application.name=Iot
-spring.data.mongodb.uri=mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/BackEndIot?appName=ProjetIot
+spring.data.mongodb.uri=mongodb+srv:YOUR_MONGO_DB
 spring.data.mongodb.database=BackEndIot
 server.port=8080
  
 jwt.secret=}|a!NZEjrRZ#6Hgwi!>l44}K7ak},z6G^kKn+yB?/SN
 jwt.expiration=86400000
-mongodb.sensors.uri=${MONGODB_SENSORS_URI:mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/Testing?appName=ProjetIot}
+mongodb.sensors.uri=${MONGODB_SENSORS_URI:YOUR_MONGO_DB}
