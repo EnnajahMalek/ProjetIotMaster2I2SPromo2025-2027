@@ -13,11 +13,7 @@ def FireDetection(data):
     MODEL_PATH = 'ml/FireDetection/models/fire_detector.pkl'
     detector = FireDetector()
     detector.load_model(MODEL_PATH)
-    #processed_features = fire_translator.prepare_for_ml(data)
-
-    ##
-    #print(f"Processed features for ML: {processed_features}")
-    #result = detector.predict(processed_features)
+  
     result=detector.predict(data)
     return result
 

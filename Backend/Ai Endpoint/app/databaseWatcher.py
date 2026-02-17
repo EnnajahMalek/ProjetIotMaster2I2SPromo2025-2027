@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import certifi
 from .traitement import process
 from app.Service.PrefFetcher import get_temperature_pref
-def translate_document(raw_doc):
+def translate_document(raw_doc , app):
     """
     Translate incoming MongoDB document format to internal format.
     
@@ -58,7 +58,7 @@ def translate_document(raw_doc):
             "doorCapteur": door_value if door_value is not None else False,
             "gazCapteur": raw_doc.get("gazCapteur", 0),
             "climatiseur": None,
-            "temperaturePrefere": get_temperature_pref(app=None, room_id=room_id),
+            "temperaturePrefere": get_temperature_pref(app=app, room_id=room_id),
             "timestamp": timestamp,
         }
         return translated
@@ -85,7 +85,7 @@ def watch_collection(app):
                     raw_doc = change['fullDocument']
                     
                     # Translate document to internal format
-                    translated_doc = translate_document(raw_doc)
+                    translated_doc = translate_document(raw_doc , app)
                     
                     if translated_doc:
                         process(translated_doc)

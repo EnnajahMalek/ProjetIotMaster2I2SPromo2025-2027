@@ -171,7 +171,7 @@ if __name__ == "__main__":
     save_model(detector)
     
     print("\n" + "="*60)
-    print("✅ TRAINING COMPLETE!")
+    print(" TRAINING COMPLETE!")
     print("="*60)
     print(f"\nTrained model saved to: {MODEL_FILE}")
     print("\nYou can now use this model in your main project!")

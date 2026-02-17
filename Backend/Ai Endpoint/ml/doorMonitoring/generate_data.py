@@ -67,14 +67,14 @@ def generate_realistic_state(timestamp):
     
     # Morning routine (7-9 AM weekdays, 9-11 AM weekends)
     if not is_weekend and 7 <= hour < 9:
-        door_open = random.random() < 0.30  # 30% chance - leaving for work
+        door_open = random.random() < 0.40  # 30% chance - leaving for work
         livingroom_light = random.random() < 0.20
         bedroom_light = random.random() < 0.60
         kitchen_light = random.random() < 0.70
         toilet_light = random.random() < 0.40
     
     elif is_weekend and 9 <= hour < 11:
-        door_open = random.random() < 0.15
+        door_open = random.random() < 0.25
         livingroom_light = random.random() < 0.40
         bedroom_light = random.random() < 0.50
         kitchen_light = random.random() < 0.60
@@ -83,13 +83,13 @@ def generate_realistic_state(timestamp):
     # Daytime - everyone out (9 AM - 5 PM)
     elif 9 <= hour < 17:
         if is_weekend:
-            door_open = random.random() < 0.10
+            door_open = random.random() < 0.20
             livingroom_light = random.random() < 0.30
             bedroom_light = random.random() < 0.20
             kitchen_light = random.random() < 0.40
             toilet_light = random.random() < 0.15
         else:
-            door_open = random.random() < 0.02  # Rarely open
+            door_open = random.random() < 0.15  # Rarely open
             livingroom_light = random.random() < 0.05
             bedroom_light = random.random() < 0.02
             kitchen_light = random.random() < 0.05
@@ -97,7 +97,7 @@ def generate_realistic_state(timestamp):
     
     # Evening return (5-7 PM)
     elif 17 <= hour < 19:
-        door_open = random.random() < 0.25  # Coming home
+        door_open = random.random() < 0.35  # Coming home
         livingroom_light = random.random() < 0.70
         bedroom_light = random.random() < 0.30
         kitchen_light = random.random() < 0.80
@@ -105,7 +105,7 @@ def generate_realistic_state(timestamp):
     
     # Evening activity (7-10 PM)
     elif 19 <= hour < 22:
-        door_open = random.random() < 0.05  # Door mostly closed
+        door_open = random.random() < 0.15  # Door mostly closed
         livingroom_light = random.random() < 0.80
         bedroom_light = random.random() < 0.30
         kitchen_light = random.random() < 0.60
@@ -113,7 +113,7 @@ def generate_realistic_state(timestamp):
     
     # Late evening (10-11 PM)
     elif 22 <= hour < 23:
-        door_open = random.random() < 0.02  # Almost never open
+        door_open = random.random() < 0.08  # Almost never open
         livingroom_light = random.random() < 0.50
         bedroom_light = random.random() < 0.40
         kitchen_light = random.random() < 0.20
@@ -121,7 +121,7 @@ def generate_realistic_state(timestamp):
     
     # Night (11 PM - 6 AM) - sleeping
     else:
-        door_open = random.random() < 0.01  # 1% - very rare
+        door_open = random.random() < 0.03  # 1% - very rare
         livingroom_light = random.random() < 0.05
         bedroom_light = random.random() < 0.10
         kitchen_light = random.random() < 0.05
