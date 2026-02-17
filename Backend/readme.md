@@ -30,7 +30,7 @@ server.port=8080
 
 ```
 
-### 🔹 Python Flask 
+### 🔹 Python Flask (`.env`)
 Add the following to you  `.env` file:
 ```.env
 MONGO_URI=mongodb://localhost:27017/smarthome
