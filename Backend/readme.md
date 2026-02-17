@@ -27,3 +27,11 @@ Add the following to your `src/main/resources/application.properties` file:
 spring.data.mongodb.uri=mongodb://localhost:27017/smarthome
 spring.data.mongodb.database=smarthome
 server.port=8080
+
+```
+```.env
+MONGO_URI=mongodb://localhost:27017/smarthome
+MONGO_DB=smarthome
+FLASK_ENV=development
+FLASK_RUN_PORT=5000
+```
