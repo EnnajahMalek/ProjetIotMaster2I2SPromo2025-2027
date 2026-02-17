@@ -1,13 +1,13 @@
 from pymongo import MongoClient
 from datetime import datetime
-
+from config import Config
 
 
 
 
 
 class MovementDetector:
-    MONGO_URI = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/"
+    MONGO_URI =Config.MONGO_URI
     DB_NAME = "Testing"
     COLLECTION_NAME = "sensor_logs" 
     def __init__(self,mongo_uri= MONGO_URI, db_name="Testing", collection_name="motion"):

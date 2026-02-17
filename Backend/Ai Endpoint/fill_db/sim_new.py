@@ -4,11 +4,16 @@ from datetime import datetime, timezone
 from pymongo import MongoClient
 import certifi
 from dotenv import load_dotenv
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config import Config
 
 load_dotenv()
 
 # Configuration
-MONGO_URI = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/"
+MONGO_URI =Config.MONGO_URI
 DB_NAME = "Testing"
 COLLECTION_NAME = "sensor_logs"
 

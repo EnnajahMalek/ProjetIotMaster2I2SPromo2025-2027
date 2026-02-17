@@ -1,8 +1,10 @@
 from pymongo import MongoClient
 from datetime import datetime
 
+from config import Config
+
 # Setup Connection
-MONGO_URI = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/"
+MONGO_URI =Config.MONGO_URI
 client = MongoClient(MONGO_URI)
 db = client["Testing"]
 collection = db["sensor_logs"]

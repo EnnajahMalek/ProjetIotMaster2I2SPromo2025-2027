@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 from pymongo import MongoClient
 import certifi
+from config import Config
 
 # MongoDB config
-MONGO_URI = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/"
+MONGO_URI =Config.MONGO_URI
 DB_NAME = "Testing"
 COLLECTION_NAME = "Room-Agents"
 ROOMS = ["livingroom", "bedroom", "kitchen", "toilet"]

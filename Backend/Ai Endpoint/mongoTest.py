@@ -1,7 +1,9 @@
 from pymongo import MongoClient
-import certifi
 
-uri = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/?retryWrites=true&w=majority"
+import certifi
+from config import Config
+
+MONGO_URI =Config.MONGO_URI
 
 try:
     # Use certifi to avoid SSL handshake errors
@@ -16,4 +18,4 @@ try:
 
 except Exception as e:
     print("❌ Connection Failed:")
-    print(e)s
+    print(e)

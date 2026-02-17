@@ -5,12 +5,13 @@ from pymongo import MongoClient
 import certifi
 import os
 from dotenv import load_dotenv
+from config import Config
 #from ..app.Service.Sender import Sender
 
 load_dotenv()
 
 # Configuration
-MONGO_URI = "mongodb+srv://projetiot:PigZNQGf6lPy97Pk@projetiot.mwwvunz.mongodb.net/"
+MONGO_URI =Config.MONGO_URI
 DB_NAME = "Testing"
 COLLECTION_NAME = "sensor_logs"
 
