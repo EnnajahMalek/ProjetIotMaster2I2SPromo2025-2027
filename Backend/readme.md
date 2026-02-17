@@ -29,6 +29,8 @@ spring.data.mongodb.database=smarthome
 server.port=8080
 
 ```
+### 🔹 Python Flask 
+Add the following to you  `.env` file:
 ```.env
 MONGO_URI=mongodb://localhost:27017/smarthome
 MONGO_DB=smarthome
